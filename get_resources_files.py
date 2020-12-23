@@ -7,8 +7,8 @@ def main():
     # Replace with your email and password here
     login_data = {
             "method": "user.login",
-            "params": {"email": "dingtj@shanghaitech.edu.cn",
-                       "pass": "GoodLuck"}
+            "params": {"email": "your_email@gmail.com",
+                       "pass": "your_password"}
         }
     session = requests.Session()
     r = session.post(
