@@ -2,7 +2,7 @@
 
 # Piazza-resources-downloader-NG
 
-Provides a tool to download all resources linked in the Piazza resources panel.
+Provides a tool to download all resources linked in the Piazza resources panel.  Updated to work as of December 23, 2020.
 
 ## Requirements
 * `Python`, works with either 2 or 3.
