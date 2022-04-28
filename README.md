@@ -25,17 +25,7 @@ git clone https://github.com/ClementTsang/piazza-downloader-NG
 6. Edit your login details in the Python code, and execute it.
 
 ```python
-    # Replace with your email and password here
-    login_data = {
-            "method": "user.login",
-            "params": {"email": "your_email@gmail.com",
-                       "pass": "your_password"}
-        }
-    session = requests.Session()
-    r = session.post(
-            "https://piazza.com/logic/api",
-            data=json.dumps(login_data),
-        )
+login_data = {"method": "user.login", "params": {"email": "test_email@gmail.com", "pass": "test_pass"}}
 ```
 
 ```bash
