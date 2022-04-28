@@ -2,43 +2,47 @@
 
 # Piazza-resources-downloader-NG
 
-Provides a tool to download all resources linked in the Piazza resources panel.  Updated to work as of December 23, 2020.
-
-## Requirements
-* `Python`, works with either 2 or 3.
-
-* `Requests`, which is a handy library to handle http operations. It can be installed via different ways.
-
-  **Using pip:**
-  ```shell
-  pip install requests
-  ```
-  **Using anaconda:**
-  ```shell
-  conda install -c anaconda requests
-  ```
+Provides a tool to download all resources linked in the Piazza resources panel.  Updated to work as of April 28, 2022.
 
 ## Getting started
 
-1. Clone the repository.
+1. Have Python and Requests installed. You can do the latter through something like `pip install requests`.
+
+2. Clone the repository.
 ```shell
-git clone https://github.com/tianjiaoding/piazza-downloader-NG.git
+git clone https://github.com/ClementTsang/piazza-downloader-NG 
 ```
 
-2. Go to Piazza resources page where all the resources can be dowloaded.
+3. Go to Piazza resources page which has the resources you want to download.
 
-3. In your broswer, excute the Javascript code `fetch_urls_and_names.js` that is in the repository.
+4. Copy the code in `fetch_urls_and_names.js` and execute it in the console. All it does is query and print out the files you wish to download.
 
    * For example, if you are using Chrome, press `F12` and go to the `Console` tab. If you are using Firefox, got to `Developer > Debugger` and then `Console`.
    * Copy and paste the aforementioned code, then press `Enter`.
 
-4. You should see outputs in your console with links and with names. Put links in `resources_links.txt`, and put names in `resources_names.txt`. Replace the existing ones if you like.
+5. You should see outputs in your console with links and with names. Replace the contents of `resources_links.txt` with your links. Do the same with `resources_names.txt` and your file names.
 
-5. Edit your login details in the Python code, and execute it.
-```shell
+6. Edit your login details in the Python code, and execute it.
+
+```python
+    # Replace with your email and password here
+    login_data = {
+            "method": "user.login",
+            "params": {"email": "your_email@gmail.com",
+                       "pass": "your_password"}
+        }
+    session = requests.Session()
+    r = session.post(
+            "https://piazza.com/logic/api",
+            data=json.dumps(login_data),
+        )
+```
+
+```bash
 cd piazza-downloader-NG
 python get_resources_files.py
 ```
 
 ## Acknowledgement
-This work is based on [`warmspringwinds`'s repository](https://github.com/warmspringwinds/piazza_resources_downloader). However, the original version is no longer being maintained and not functional in many cases, e.g., when login is required, or the link contains newline symbol. This work aims at fixing those problems and providing a working tool.
+
+This is a fork from [tianjiaoding](https://github.com/tianjiaoding/piazza-downloader-NG)'s work, which in turn is based on work from [warmspringwinds](https://github.com/warmspringwinds/piazza_resources_downloader).

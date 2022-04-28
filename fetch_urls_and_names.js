@@ -1,12 +1,11 @@
-file_links = [];
-file_names = [];
+let file_links = [];
+let file_names = [];
 
-results = document.querySelectorAll('a[data-pats="resources_link"]:not([href="#"])')
+results = document.querySelectorAll('a[id^="resourceLink"]:not([href="#"])')
 
-$.each(results, function(_index, element){
-    current_element = $(element);
-    file_links.push(current_element.prop("href"));
-    file_names.push(current_element.text());
+results.forEach(function(element) {
+    file_links.push(element.href);
+    file_names.push(element.text);
 });
 
 file_links_output = file_links.join("\n");

@@ -1,6 +1,2 @@
-CS284_Lecture_05.pdf
-CS284_Lecture_04.pdf
-CS284_Lecture_03.pdf
-CS284_Lecture_02.pdf
-CS284_Lecture_01.pdf
-paper_arun_pointset_registration.pdf
+# For example:
+this_is_a_test.pdf
