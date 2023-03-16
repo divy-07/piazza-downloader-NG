@@ -2,7 +2,7 @@
 
 # Piazza-resources-downloader-NG
 
-Provides a tool to download all resources linked in the Piazza resources panel.  Updated to work as of April 28, 2022.
+Provides a tool to download all resources linked in the Piazza resources panel.  Updated to work as of April 28, 2022. Feel free to let me know if it's not working anymore.
 
 ## Getting started
 
