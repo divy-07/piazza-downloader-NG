@@ -2,7 +2,15 @@
 
 # Piazza-resources-downloader-NG
 
-Provides a tool to download all resources linked in the Piazza resources panel.  Updated to work as of April 28, 2022. Feel free to let me know if it's not working anymore.
+Provides a tool to download all resources linked in the Piazza resources panel.
+
+## Improvements in this fork
+As of April 09, 2025, this fork has been updated to work with the latest Piazza API changes. The following improvements have been made:
+
+- Fixed login errors by adding CSRF support.
+- Save files with correct filetype extension if not provided in the filename.
+   - Supported filetypes: `pdf`, `jpg`, `png`, `zip`, `doc`, `docx`, `csv`, `json`, `mp3`.
+   - Rest will default to no file extension (unless already specified in file name).
 
 ## Getting started
 
@@ -10,7 +18,7 @@ Provides a tool to download all resources linked in the Piazza resources panel. 
 
 2. Clone the repository.
 ```shell
-git clone https://github.com/ClementTsang/piazza-downloader-NG 
+git clone https://github.com/divy-07/piazza-downloader-NG.git
 ```
 
 3. Go to Piazza resources page which has the resources you want to download.
@@ -25,7 +33,8 @@ git clone https://github.com/ClementTsang/piazza-downloader-NG
 6. Edit your login details in the Python code, and execute it.
 
 ```python
-login_data = {"method": "user.login", "params": {"email": "test_email@gmail.com", "pass": "test_pass"}}
+EMAIL = "test_email@gmail.com"
+PASSWORD = "test_pass"
 ```
 
 ```bash
@@ -35,4 +44,6 @@ python get_resources_files.py
 
 ## Acknowledgement
 
-This is a fork from [tianjiaoding](https://github.com/tianjiaoding/piazza-downloader-NG)'s work, which in turn is based on work from [warmspringwinds](https://github.com/warmspringwinds/piazza_resources_downloader).
+- This is a fork from [ClementTsang](https://github.com/ClementTsang/piazza-downloader-NG), which in turn is a fork of [tianjiaoding](https://github.com/tianjiaoding/piazza-downloader-NG)'s work, which in turn is based on work from [warmspringwinds](https://github.com/warmspringwinds/piazza_resources_downloader).
+
+- A lot of the login code was inspired by [the unofficial piazza API client](https://github.com/hfaran/piazza-api/)
